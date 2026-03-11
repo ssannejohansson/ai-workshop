@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Demo</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-card">
+        <p class="eyebrow">Demo storefront</p>
+        <h1>Browse products from your API.</h1>
+        <p class="hero-copy">
+          A lightweight frontend for exploring the product endpoints without
+          Postman or curl.
+        </p>
+
+        <form id="filters-form" class="filters-panel">
+          <label>
+            Minimum price
+            <input id="price-gt" name="price_gt" type="number" min="0" step="0.01" placeholder="5" />
+          </label>
+          <label>
+            Maximum price
+            <input id="price-lt" name="price_lt" type="number" min="0" step="0.01" placeholder="30" />
+          </label>
+          <div class="button-row">
+            <button type="submit">Apply filters</button>
+            <button type="button" id="reset-button" class="secondary-button">Reset</button>
+          </div>
+        </form>
+
+        <p id="feedback" class="feedback" role="status"></p>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Products</h2>
+            <span id="product-count" class="count-badge">0 items</span>
+          </div>
+          <div id="product-list" class="product-list"></div>
+        </article>
+
+        <article class="panel detail-panel">
+          <div class="panel-header">
+            <h2>Details</h2>
+          </div>
+          <div id="product-detail" class="product-detail empty-state">
+            Select a product to fetch its details.
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
